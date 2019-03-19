@@ -69,5 +69,8 @@ fi
 systemctl enable docker
 systemctl start docker
 
+sed -i '/pam_systemd.so/s/^/#/g' /etc/pam.d/password-auth-ac
+sed -i '/pam_systemd.so/s/^/#/g' /etc/pam.d/system-auth-ac
+
 echo $(date) " - Script Complete"
 
